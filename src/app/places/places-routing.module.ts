@@ -8,8 +8,6 @@ const routes: Routes = [
     path: '',
     component: PlacesPage
   },
-  //{ path: 'discover', loadchildren: () => import('./discover/discover.module').then( m => m.discoverpagemodule) },
-  //{ path: 'offers', loadChildren: () => import('./offers/offers.module').then( m => m.OffersPageModule) }
   { 
     path: 'discover', 
     children: [
@@ -24,7 +22,6 @@ const routes: Routes = [
       { path: 'new', loadChildren: () => import('./offers/new-offer/new-offer.module').then(m => m.NewOfferPageModule) },
       { path: 'edit/:placeId', loadChildren: () => import('./offers/edit-offer/edit-offer.module').then(m => m.EditOfferPageModule) },
       { path: ':placeId', loadChildren: () => import('./offers/offer-bookings/offer-bookings.module').then(m => m.OfferBookingsPageModule) },
-      //{ path: ':placeId', loadChildren: () => import('./offers/offer-detail/offer-detail.module').then(m => m.OfferDetailPageModule) }
     ]
   }
 ];

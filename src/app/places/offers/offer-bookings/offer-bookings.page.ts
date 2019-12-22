@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 
 import { Place } from '../../places.model';
 import { PlacesService } from '../../places.service';
+import { PlaceOffersService } from '../../place-offers.service';
 
 @Component({
   selector: 'app-offer-bookings',
@@ -13,14 +14,14 @@ import { PlacesService } from '../../places.service';
 export class OfferBookingsPage implements OnInit {
   place: Place; 
 
-  constructor(private route: ActivatedRoute, private navCtrl: NavController, private placesService: PlacesService){}
+  constructor(private route: ActivatedRoute, private navCtrl: NavController, private placesService: PlaceOffersService){}
   ngOnInit(){
     this.route.paramMap.subscribe(paramMap => {
       if(!paramMap.has('placeId')){
         this.navCtrl.navigateBack('/places/offers');
         return;
       }
-      this.place = this.placesService.getPlace(paramMap.get('placeId'));
+      this.place = this.placesService.getPlaceOffers(paramMap.get('placeId'));
     });
   }
 }
