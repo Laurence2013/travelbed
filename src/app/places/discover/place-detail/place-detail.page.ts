@@ -17,7 +17,7 @@ export class PlaceDetailPage implements OnInit {
   ngOnInit(){
     this.route.paramMap.subscribe(pMap => {
       if(!pMap.has('placeId')){
-        this.navCtrl.navigateBack('/places/offers');
+        this.navCtrl.navigateBack('/places/tabs/discover');
         return;
       }
       this.place = this.placeOffersService.getPlaceOffers(pMap.get('placeId'));
@@ -25,6 +25,6 @@ export class PlaceDetailPage implements OnInit {
     console.log(this.place);
   }
   onBookPlace(){
-    this.navCtrl.navigateBack('/places/discover');
+    this.navCtrl.navigateBack('/places/tabs/discover');
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PlacesService } from '../places.service';
+import { PlaceOffersService } from '../place-offers.service';
 import { Place } from '../places.model';
 
 @Component({
@@ -11,8 +11,8 @@ import { Place } from '../places.model';
 export class DiscoverPage implements OnInit {
   loadedPlaces: Place[];
 
-  constructor(private placesService: PlacesService){}
+  constructor(private placeOffersService: PlaceOffersService){}
   ngOnInit(){
-    this.loadedPlaces = this.placesService.places;
+    this.loadedPlaces = this.placeOffersService.placeOffers;
   }
 }

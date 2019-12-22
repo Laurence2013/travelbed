@@ -11,6 +11,6 @@ export class OfferDetailPage implements OnInit {
   constructor(private navCtrl: NavController){}
   ngOnInit(){}
   onOfferDetail(){
-    this.navCtrl.navigateBack('/places/offers');
+    this.navCtrl.navigateBack('/places/tabs/offers');
   }
 }
